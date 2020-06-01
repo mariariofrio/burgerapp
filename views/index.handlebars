@@ -1,5 +1,25 @@
-<div>
-    {{#each burgers}}
-        <h6>{{burger_name}}</h6>
-    {{/each}}
-</div>
+
+<h1>Burgers!</h1>
+
+<h3>
+  {{#each burgers}}
+    {{!-- {{burger_name}} --}}
+  {{/each}}
+</h3>
+<img src="https://static.vecteezy.com/system/resources/previews/000/480/987/non_2x/vector-hamburger-poster-in-comic-style.jpg" alt="burgerimg">
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Burger Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  {{!-- <div class="form-group">
+    <label for="sleepy">Type?</label><br>
+    <input type="radio" name="sleepy" value="1" checked> Swiss!<br>
+    <input type="radio" name="sleepy" value="0"> Avocado
+  </div> --}}
+
+  <button type="submit">Add Burger</button>
+</form>

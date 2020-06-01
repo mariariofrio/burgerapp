@@ -1,3 +1,10 @@
 body {
-    background-color: aquamarine;
+    background-color: rgba(93, 66, 214, 0.664);
+    margin-top: 5%;
+    margin-left: 40%;
+    margin-right: 20%;
+}
+
+img {
+    width: 150px;
 }
