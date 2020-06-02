@@ -1,12 +1,12 @@
 console.log ("css is a file")
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-sleep").on("click", function(event) {
+    $(".devourBtn").on("click", function(event) {
       var id = $(this).data("id");
-      var newBurger = $(this).data("newBurger");
-  
-      var newBurgerState = {
-        type: newBurger
+      let devoured = true;
+
+      let devourState = {
+          devoured: devoured
       };
   
       // Send the PUT request.
@@ -27,8 +27,7 @@ $(function() {
       event.preventDefault();
   
       var newBurgers = {
-        name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim()
+        name: $("#ca").val().trim()
       };
   
       // Send the POST request.
@@ -37,26 +36,12 @@ $(function() {
         data: newBurgers
       }).then(
         function() {
-          console.log("created new cat");
+          console.log("created new burger");
           // Reload the page to get the updated list
           location.reload();
         }
       );
     });
   
-    $(".delete-cat").on("click", function(event) {
-      var id = $(this).data("id");
-  
-      // Send the DELETE request.
-      $.ajax("/api/burgers/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted burger", id);
-          // Reload the page to get the updated list
-          location.reload();
-        }
-      );
-    });
   });
   
