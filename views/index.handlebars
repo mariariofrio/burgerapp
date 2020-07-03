@@ -1,46 +1,59 @@
-
+<div class="container justify-content-md-center">
 <h1>Burgers!</h1>
+</div>
+<section>
+  <div class="container  justify-content-md-center">
+    <div class="row"></div>
 
-<h3>
-  {{#each burgers}}
-    {{!-- {{burger_name}} --}}
-  {{/each}}
-</h3>
-<img src="https://static.vecteezy.com/system/resources/previews/000/480/987/non_2x/vector-hamburger-poster-in-comic-style.jpg" alt="burgerimg">
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h2>You have a burger to be Devoured!</h2>
-
-            <ul>
-                {{#each burgers}}
-                {{#unless devoured}}
-                <li>
-                    {{burger_name}}
-                    <button class="devourBtn" data-id="{{id}}" data-devoured="{{devoured}}">DEVOUR!</button>
-                </li>
-                {{/unless}}
-                {{/each}}
-            </ul>
-        </div>
-        <div class="col-md-6">
-            <h2>Devoured!</h2>
-
-            <ul>
-                {{#each burgers}}
-                {{#if devoured}}
-                <li>{{burger_name}}</li>
-                {{/if}}
-                {{/each}}
-            </ul>
-        </div>
-<form class="create-form">
-
-  <div class="form-group">
-<h2>Add a Burger</h2>
-    <label for="ca" id="font">Burger Name:</label>
-    <input type="text" id="ca" name="name">
+    <h3>
+      {{#each burgers}}
+      {{!-- {{burger_name}} --}}
+      {{/each}}
+    </h3>
+    <img
+      src="https://static.vecteezy.com/system/resources/previews/000/480/987/non_2x/vector-hamburger-poster-in-comic-style.jpg"
+      alt="burgerimg">
   </div>
+  </div>
+  <br>
+  <div class="container justify-content-md-center">
+    <div class="row">
+      <div class="col-md-3">
+        <form class="create-form">
 
-  <button type="submit">Add Burger</button>
-</form>
+          <div class="form-group">
+            <h3>Add a Burger</h3>
+            <label for="ca" id="font">Burger Name:</label>
+            <input type="text" id="ca" name="name">
+          </div>
+
+          <button type="submit" class="btnsubm">Add Burger</button>
+        </form>
+      </div>
+      <div class="col-md-5">
+        <h3>You have added your burgers here!</h3>
+
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          <li>
+            {{burger_name}}
+            <button class="devourBtn" data-id="{{id}}" data-devoured="{{devoured}}">DEVOUR!</button>
+          </li>
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-md">
+        <h3>You ate before </h3>
+
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          <li>{{burger_name}}</li>
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+</section>
+  

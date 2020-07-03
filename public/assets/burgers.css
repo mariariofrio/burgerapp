@@ -1,10 +1,22 @@
 body {
-    background-color: rgba(93, 66, 214, 0.664);
+    background-color: rgba(165, 148, 240, 0.664);
     margin-top: 5%;
+
+}
+h1 {
+    color: rgb(85, 74, 74);
+   margin-left: 42%;
+}
+img {
     margin-left: 40%;
-    margin-right: 20%;
+    width: 200px;
 }
 
-img {
-    width: 150px;
+.devourBtn {
+    background-color: rgb(187, 53, 187);
+    color: rgb(236, 184, 166);
+}
+.btnsubm {
+    background-color: rgb(187, 53, 187);
+    color:white;
 }

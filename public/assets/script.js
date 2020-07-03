@@ -6,12 +6,16 @@ $(document).ready(function(){
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
     console.log("yummy");
+    console.log("newBurgers", newBurgers)
     
+    var newBurgers = {
+      name: $("#ca").val().trim()
+    };
     // Send the POST request.
     $.ajax("/api/burgers", {
-      type: "PUT",
+      type: "POST",
       data: newBurgers,
-      url: "/burger_name/"
+     // url: "/burger_name/"
     }).then(
       function() {
         console.log("created new burger");
@@ -20,34 +24,33 @@ $(document).ready(function(){
       }
       );
     });
-    var newBurgers = {
-      name: $("#ca").val().trim()
-    };
-  });
-
-  $(".devourBtn").on("submit", function(event) {
-    var id = $(this).data("id");
-    let devoured = true;
-    console.log("ready");
-    let devourState = {
-      devoured: devoured
-    };
-
-  $(function() {
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newBurgerState
-    }).then(
-      function() {
-        console.log("changed sleep to", newBurger);
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
+    $(".devourBtn").on("click", function(event) {
+      event.preventDefault()
+      console.log("HERE I AM")
+      var id = $(this).data("id");
+      let devoured = true;
+      console.log("ready");
+      let devourState = {
+        devoured: devoured
+      };
   
+    $(function() {
+      $.ajax("/api/burgers/" + id, {
+        type: "PUT",
+        data: devourState
+      }).then(
+        function(response) {
+          console.log("it was yummy", response);
+          // Reload the page to get the updated list
+          debugger
+          location.reload();
+        }
+      );
+    });
     
       
-      // Send the PUT request.
-    
-});
+        
+        // Send the PUT request.
+      
+  });
+  });
